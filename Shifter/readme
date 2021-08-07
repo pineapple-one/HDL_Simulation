@@ -1,1 +1,11 @@
+CPU Shifter
 
+It needs to do 3 things: 
+ - Shift (to) left logical (SLL)
+ - Shift (to) right logical (SRL)
+ - Shift (to) right arithmetic (SRA)
+
+The value to be shifted is from “input data” (32bits) and “shift by” (5bits) determines how much the value should be shifted.
+The direction is (left or right) is from funct3: 0b001 is SLL, 0b101 is SRL and 0b101 is SRA.
+Don’t be confused that SRL and SRA have the same funct3 code, this last thing is from the “I” input:
+if I is high, it will do a SRA, if low, It will do SRL. “I” input is not relevant is SLL operations
